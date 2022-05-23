@@ -1,27 +1,29 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
+import { Header } from "./components/Header";
+import { Question } from "./components/Question";
+import "./index.css";
+import questionsData from "./sample-data";
 import styled from "styled-components";
+import { Footer } from "./components/Footer";
 
-const Header = styled.h1`
-  color: red;
-
-  @media (max-width: 480px) {
-    font-size: 24px;
-    color: green;
-  }
-`;
-
-const Hero = styled(Header)`
-  color: blue;
-  font-size: 100px;
+const Container = styled.div`
+  margin: auto;
+  max-width: 720px;
+  padding: 20px;
 `;
 
 const App = () => {
   return (
-    <div>
-      <Hero>I am a hero</Hero>
-      <Header>Hello React!</Header>
-    </div>
+    <Container>
+      <Header />
+      <div id="questionList">
+        {questionsData.map((questionWithOptions, index) => (
+          <Question key={`question${index}`} {...questionWithOptions} />
+        ))}
+      </div>
+      <Footer />
+    </Container>
   );
 };
 
