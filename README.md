@@ -11,6 +11,3 @@ This repo contains several handson tasks using which you can learn more on React
 ## Contribute
 
 You can support this initiative to create better Frontend developers, by submitting PRs for new tasks, optimized solutions, improving documentation and solving mistakes.
-
-Test Revert
-
